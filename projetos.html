@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projetos - Dois Sentidos | Produtora Audiovisual</title>
+    
     <!-- Tipografia Cinematográfica -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Vinculo com o arquivo CSS externo -->
+    <!-- Vínculo com o arquivo CSS externo -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -204,11 +205,16 @@
                     const category = card.getAttribute('data-category');
                     if (filterValue === 'all' || category === filterValue) {
                         card.style.display = 'flex';
-                        setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
+                        setTimeout(() => { 
+                            card.style.opacity = '1'; 
+                            card.style.transform = 'translateY(0)'; 
+                        }, 50);
                     } else {
                         card.style.opacity = '0';
                         card.style.transform = 'translateY(20px)';
-                        setTimeout(() => { card.style.display = 'none'; }, 300);
+                        setTimeout(() => { 
+                            card.style.display = 'none'; 
+                        }, 300);
                     }
                 });
             });
