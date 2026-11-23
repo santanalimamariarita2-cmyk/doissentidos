@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Vinculo com o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -17,7 +20,7 @@
             <ul>
                 <li><a href="index.html">Início</a></li>
                 <li><a href="index.html#quem-somos">Quem Somos</a></li>
-                <li><a href="projetos.html" class="active">Projetos</a></li>
+                <li><a href="projeto.html" class="active">Projetos</a></li>
                 <li><a href="contato2.html">Contato</a></li>
             </ul>
         </nav>
@@ -41,21 +44,215 @@
             <!-- Promocional 1 -->
             <article class="promo-card">
                 <div class="promo-video-wrapper">
-                    <iframe src="apresentacao.mp4" title="Showreel Promocional 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Showreel Promocional 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="promo-info">
-                    <h3 class="promo-title">Quem somos - Dois Sentidos</h3>
-                    <p class="promo-desc">Nosso objetivo como produtora é registrar seus momentos.</p>
+                    <h3 class="promo-title">Showreel Oficial 2026 - Dois Sentidos</h3>
+                    <p class="promo-desc">Uma viagem acelerada pelo nosso melhor trabalho de pós-produção, design de som e cinematografia.</p>
                 </div>
             </article>
 
             <!-- Promocional 2 -->
             <article class="promo-card">
                 <div class="promo-video-wrapper">
-                    <iframe src="castlevania.mp4" title="Showreel Promocional 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Showreel Promocional 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="promo-info">
-                    <h3 class="promo-title">Vídeo promocional: Muko-Gawa</h3>
-                    <p class="promo-desc">Descubra o universo de Muko-Gawa, um mangá feito por brasileiros.</p>
+                    <h3 class="promo-title">Making Of & Bastidores: O Poder do Shounen</h3>
+                    <p class="promo-desc">Descubra como traduzimos a energia e a adrenalina dos animes para campanhas publicitárias reais.</p>
                 </div>
             </article>
+        </div>
+    </section>
+
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="comercial">Comercial</button>
+        <button class="filter-btn" data-filter="videoclipe">Videoclipe</button>
+        <button class="filter-btn" data-filter="cinematografico">Cinematográfico</button>
+        <button class="filter-btn" data-filter="anime">Animes / Shounen</button>
+    </div>
+
+    <main class="portfolio-grid" id="projectGrid">
+        
+        <!-- Projeto 1 -->
+        <article class="project-card" data-category="comercial">
+            <div class="project-thumbnail">
+                <span class="project-category-badge">Comercial</span>
+                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80" alt="Câmera em ação" onerror="this.src='https://placehold.co/800x450/121216/ff3366?text=Dois+Sentidos'">
+            </div>
+            <div class="project-info">
+                <h3 class="project-title">Eclipse: A Força da Marca</h3>
+                <p class="project-description">Campanha institucional desenvolvida com dinâmica visual acelerada, paleta de cores contrastantes e design de som imersivo.</p>
+                <button class="btn-detail" onclick="openModal('Eclipse: A Força da Marca', 'Comercial', 'Campanha institucional desenvolvida com dinâmica visual acelerada, paleta de cores contrastantes e design de som imersivo para reposicionamento de marca no mercado de tecnologia.', 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80', '4K Ultra HD', '2026', 'Eclipse Corp')">Ver Detalhes</button>
+            </div>
+        </article>
+
+        <!-- Projeto 2 -->
+        <article class="project-card" data-category="anime">
+            <div class="project-thumbnail">
+                <span class="project-category-badge">Animes / Shounen</span>
+                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80" alt="Estilo Anime" onerror="this.src='https://placehold.co/800x450/121216/ff3366?text=Dois+Sentidos'">
+            </div>
+            <div class="project-info">
+                <h3 class="project-title">Despertar do Herói: AMV Épico</h3>
+                <p class="project-description">Homenagem em vídeo aos animes shounen clássicos, combinando edição rítmica frenética e trilha sonora orquestral personalizada.</p>
+                <button class="btn-detail" onclick="openModal('Despertar do Herói: AMV Épico', 'Animes / Shounen', 'Homenagem em vídeo aos animes shounen clássicos, combinando edição rítmica frenética e trilha sonora orquestral personalizada focada em despertar adrenalina pura.', 'https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80', '1080p 60fps', '2026', 'Projeto Independente')">Ver Detalhes</button>
+            </div>
+        </article>
+
+        <!-- Projeto 3 -->
+        <article class="project-card" data-category="videoclipe">
+            <div class="project-thumbnail">
+                <span class="project-category-badge">Videoclipe</span>
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Videoclipe musical" onerror="this.src='https://placehold.co/800x450/121216/ff3366?text=Dois+Sentidos'">
+            </div>
+            <div class="project-info">
+                <h3 class="project-title">Neon Rhapsody - Single Oficial</h3>
+                <p class="project-description">Videoclipe musical imersivo com iluminação cyberpunk em tons neon, sombras profundas e narrativa altamente sensorial.</p>
+                <button class="btn-detail" onclick="openModal('Neon Rhapsody - Single Oficial', 'Videoclipe', 'Videoclipe musical imersivo com iluminação cyberpunk em tons neon, sombras profundas e narrativa altamente sensorial que explora a dualidade humana.', 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80', '4K Anamorphic', '2025', 'Banda Underground')">Ver Detalhes</button>
+            </div>
+        </article>
+
+        <!-- Projeto 4 -->
+        <article class="project-card" data-category="cinematografico">
+            <div class="project-thumbnail">
+                <span class="project-category-badge">Cinematográfico</span>
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80" alt="Filme Curta Metragem" onerror="this.src='https://placehold.co/800x450/121216/ff3366?text=Dois+Sentidos'">
+            </div>
+            <div class="project-info">
+                <h3 class="project-title">Além do Horizonte (Curta)</h3>
+                <p class="project-description">Curta-metragem dramático independente que explora a jornada emocional e visual de um artista em busca de seu sentido criativo.</p>
+                <button class="btn-detail" onclick="openModal('Além do Horizonte (Curta)', 'Cinematográfico', 'Curta-metragem dramático independente que explora a jornada emocional e visual de um artista em busca de seu sentido criativo sob fotografia intimista.', 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80', '4K CinemaScope', '2025', 'Festival de Curtas')">Ver Detalhes</button>
+            </div>
+        </article>
+
+        <!-- Projeto 5 -->
+        <article class="project-card" data-category="comercial">
+            <div class="project-thumbnail">
+                <span class="project-category-badge">Comercial</span>
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="Produto Comercial" onerror="this.src='https://placehold.co/800x450/121216/ff3366?text=Dois+Sentidos'">
+            </div>
+            <div class="project-info">
+                <h3 class="project-title">Aura: Sound & Vision</h3>
+                <p class="project-description">Filme de lançamento para linha de fones de ouvido de alta fidelidade, unindo design industrial e sincronia sonora impecável.</p>
+                <button class="btn-detail" onclick="openModal('Aura: Sound & Vision', 'Comercial', 'Filme de lançamento para linha de fones de ouvido de alta fidelidade, unindo design industrial e sincronia sonora impecável com graves profundos.', 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80', '4K HDR', '2026', 'Aura Audio')">Ver Detalhes</button>
+            </div>
+        </article>
+
+        <!-- Projeto 6 -->
+        <article class="project-card" data-category="anime">
+            <div class="project-thumbnail">
+                <span class="project-category-badge">Animes / Shounen</span>
+                <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80" alt="Cena de Batalha" onerror="this.src='https://placehold.co/800x450/121216/ff3366?text=Dois+Sentidos'">
+            </div>
+            <div class="project-info">
+                <h3 class="project-title">Kizuna: O Vínculo Eterno</h3>
+                <p class="project-description">Teaser conceitual de animação e direção de arte inspirado em batalhas shounen, enfatizando superação e amizade.</p>
+                <button class="btn-detail" onclick="openModal('Kizuna: O Vínculo Eterno', 'Animes / Shounen', 'Teaser conceitual de animação e direção de arte inspirado em batalhas shounen, enfatizando superação, amizade e a união perfeita entre visão e áudio.', 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80', 'Full HD 60fps', '2026', 'Estúdio Dois Sentidos')">Ver Detalhes</button>
+            </div>
+        </article>
+
+    </main>
+
+    <div class="modal-overlay" id="projectModal" onclick="checkCloseModal(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-video-container">
+                <img id="modalImg" src="" alt="Detalhe do Projeto" onerror="this.src='https://placehold.co/800x450/121216/ff3366?text=Dois+Sentidos'">
+            </div>
+            <div class="modal-body">
+                <div class="modal-meta" id="modalCategory">Categoria</div>
+                <h2 class="modal-title" id="modalTitle">Título do Projeto</h2>
+                <p class="modal-description" id="modalDescription">Descrição detalhada do projeto aparecerá aqui.</p>
+                
+                <div class="modal-specs">
+                    <div class="spec-item">
+                        <span>Formato / Resolução</span>
+                        <span id="modalResolution">4K Cinema</span>
+                    </div>
+                    <div class="spec-item">
+                        <span>Ano de Produção</span>
+                        <span id="modalYear">2026</span>
+                    </div>
+                    <div class="spec-item">
+                        <span>Cliente / Parceiro</span>
+                        <span id="modalClient">Dois Sentidos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Dois Sentidos - Produtora Audiovisual. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Filtragem de Categorias
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filterValue === 'all' || category === filterValue) {
+                        card.style.display = 'flex';
+                        setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => { card.style.display = 'none'; }, 300);
+                    }
+                });
+            });
+        });
+
+        // Funções do Modal
+        const modal = document.getElementById('projectModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalCategory = document.getElementById('modalCategory');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalImg = document.getElementById('modalImg');
+        const modalResolution = document.getElementById('modalResolution');
+        const modalYear = document.getElementById('modalYear');
+        const modalClient = document.getElementById('modalClient');
+
+        function openModal(title, category, description, imgSrc, resolution, year, client) {
+            modalTitle.textContent = title;
+            modalCategory.textContent = category;
+            modalDescription.textContent = description;
+            modalImg.src = imgSrc;
+            modalResolution.textContent = resolution;
+            modalYear.textContent = year;
+            modalClient.textContent = client;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function checkCloseModal(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
