@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dois Sentidos - Produtora Audiovisual</title>
+    
+    <!-- Tipografia Cinematográfica -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0a0a0c;
+            --bg-card: #121216;
+            --accent: #ff3366;
+            --accent-glow: rgba(255, 51, 102, 0.35);
+            --text-main: #f0f0f5;
+            --text-muted: #a0a0b0;
+            --border: rgba(255, 255, 255, 0.08);
+            --font-heading: 'Cinzel', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Menu de Navegação */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 12, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Seção Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1.5rem;
+            background: radial-gradient(circle at center, rgba(255, 51, 102, 0.15) 0%, rgba(10, 10, 12, 1) 75%);
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            letter-spacing: 4px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        .hero p.subtitle {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            color: var(--accent);
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .hero p.description {
+            max-width: 650px;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px var(--accent-glow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--accent);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 35px var(--accent-glow);
+            background: transparent;
+            color: var(--accent);
+        }
+
+        /* Seções Gerais */
+        .section {
+            padding: 6rem 8%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        /* Seção Quem Somos */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-highlight {
+            font-size: 1.25rem !important;
+            color: var(--text-main) !important;
+            font-weight: 600;
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        .senses-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .sense-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .sense-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .sense-card h3 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sense-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Seção do Manifesto / Estilo Anime */
+        .inspiration-box {
+            background: linear-gradient(135deg, rgba(255, 51, 102, 0.1), rgba(18, 18, 22, 0.8));
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .inspiration-box h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .inspiration-box p {
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Seção Contato */
+        .contact {
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        .contact p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 1.5rem auto 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Rodapé */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 5%;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 868px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                gap: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho / Navegação -->
+    <header>
+        <a href="#home" class="logo" aria-label="Dois Sentidos - Página inicial">DOIS <span>SENTIDOS</span></a>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#quem-somos">Quem Somos</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Principal (Hero) -->
+    <section id="home" class="hero">
+        <h1>Dois Sentidos</h1>
+        <p class="subtitle">Produtora Audiovisual</p>
+        <p class="description">
+            Transformando sonhos em realidade através de histórias marcantes, fotografia de alto impacto e experiências visuais inesquecíveis.
+        </p>
+        <a href="#quem-somos" class="btn">Conheça Nossa História</a>
+    </section>
+
+    <!-- Seção Quem Somos -->
+    <section id="quem-somos" class="section">
+        <h2 class="section-title">Quem Somos</h2>
+        
+        <div class="about-grid">
+            <div class="about-text">
+                <p class="about-highlight">
+                    Uma produtora audiovisual que transforma sonhos em realidade.
+                </p>
+                <p>
+                    O nome <strong>Dois Sentidos</strong> nasceu do nosso principal objetivo: contar histórias através da união perfeita entre a <strong>visão</strong> e a <strong>audição</strong>, utilizando a fotografia e o vídeo como nossas principais ferramentas de expressão.
+                </p>
+                <p>
+                    Acreditamos que a comunicação audiovisual vai muito além da técnica. Ela é uma forma de capturar momentos, despertar sentimentos e criar uma conexão profunda com quem assiste.
+                </p>
+            </div>
+
+            <div class="senses-cards">
+                <div class="sense-card">
+                    <h3>👁️ Visão</h3>
+                    <p>Através do enquadramento, das cores e da fotografia, capturamos a essência visual de cada projeto para transmitir emoção a cada frame.</p>
+                </div>
+                <div class="sense-card">
+                    <h3>🎧 Audição</h3>
+                    <p>O som dá vida às imagens. Criamos um ambiente sonoro imersivo com edição de áudio, trilhas e narrativas envolventes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bloco de Inspiração -->
+        <div class="inspiration-box">
+            <h3>A Nossa Inspiração</h3>
+            <p>
+                A grande inspiração para a criação da marca foi a incrível capacidade de cativação que os <strong>animes shounen</strong> trazem para o público. Trouxemos essa mesma intensidade e paixão narrativa para o audiovisual e a comunicação, transformando cada vídeo em uma experiência emocionante.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos" class="section">
+        <h2 class="section-title">Projetos</h2>
+        <p style="color: var(--text-muted); margin-top: 1.5rem;">
+            Em breve nossos últimos trabalhos e portfólio completo estarão disponíveis aqui.
+        </p>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="section contact">
+        <h2 class="section-title">Vamos Criar Juntos?</h2>
+        <p>Tem um projeto ou uma ideia em mente? Entre em contato conosco para transformarmos o seu sonho em realidade.</p>
+        <a href="contato2.html" target="_blank" rel="noopener noreferrer" class="btn">Entrar em Contato</a>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Dois Sentidos - Produtora Audiovisual. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
